@@ -1,0 +1,57 @@
+<apex:page standardcontroller="Product_Information_Summary__c" extensions="ProductInformatonCls" sidebar="false" docType="html-5.0" lightningStylesheets="true" standardStylesheets="false">
+   <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+    <apex:slds />
+    
+    <style>
+       label{
+
+             font-size:110%;
+
+             color:#2980B9;
+
+         } 
+
+    </style>
+ 
+    
+    <apex:form id="f1">
+        
+              <div>
+                  
+        </div>
+        <div class="slds-form slds-form_horizontal" role="textbox">
+             <apex:sectionHeader title="NEW PRODUCT NOTIFICATION FORM" />
+            <div class="slds-grid slds-gutters_small">
+                
+                <label class="slds-form-element__label" for="form-element-id-01">New PHM</label>
+                <apex:inputfield value="{!objPIS.New_PHM__c}" styleClass="slds-input" style="width:65%" id="text-input-id-1"/>
+                <label class="slds-form-element__label" for="text-input-id-2">BUILDING</label>
+                <apex:inputfield value="{!objPIS.Building__c}" styleClass="slds-input" style="width:65%" id="text-input-id-2"/>
+                <label class="slds-form-element__label" for="text-input-id-3">SUBMIT DATE</label>
+                <apex:inputfield value="{!objPIS.Submit_Date__c}" styleClass="slds-input" style="width:65%" id="text-input-id-3"/>
+            </div>
+            <div class="slds-form-element__control">
+                <label class="slds-form-element__label" for="text-input-id-4">DEPARTMENT</label>
+                <apex:inputfield value="{!objPIS.Department__c}" styleClass="slds-input" style="width:65%" id="text-input-id-4"/>
+                <label class="slds-form-element__label" for="text-input-id-5">SCHEDULED START DATE</label>
+                <apex:inputfield value="{!objPIS.Scheduled_Start_Date__c}" styleClass="slds-input" style="width:65%" id="text-input-id-5"/>
+            </div>
+        </div>
+        <apex:datatable value="{!phsList}" var="p"  styleclass="slds-table slds-table_cell-buffer slds-table_bordered">
+        	<apex:column headerValue="Chemical Name"  styleClass="slds-text-title_caps">
+             	<apex:inputfield value="{!p.phs.Chemical_Name__c}"  styleClass="slds-input"/>
+            </apex:column>
+            <apex:column headerValue="QA/LY Number" styleClass="slds-text-title_caps">
+             	<apex:inputfield value="{!p.phs.QA_LY_Number__c}" styleClass="slds-input"/>
+            </apex:column>
+            <apex:column headerValue="Pictogram" styleClass="slds-text-title_caps">
+             	<apex:inputText value="{!p.phs.Pictogram__c}" styleClass="slds-input"/>
+            </apex:column>
+             <apex:column headerValue="Signal Code" styleClass="slds-text-title_caps">
+             	<!--<apex:inputText value="{!p.phs.Pictogram__c}"/> -->
+            </apex:column>
+        </apex:datatable>
+         <apex:commandButton value="Save" action="{!save}" />
+    </apex:form>
+       </html>
+</apex:page>

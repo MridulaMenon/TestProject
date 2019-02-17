@@ -1,0 +1,26 @@
+<aura:component  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"  controller="ProductNotificationClass">
+    <ltng:require styles="/resource/SLDS/assets/styles/salesforce-lightning-design-system.min.css"/>
+
+    <aura:attribute name="productinformation" type="ProductInformation__c"
+         default="{ 'sobjectType': 'ProductInformation__c',
+                        'Name__c': ''}"/>
+    
+   	<!--<aura:handler name="init" value="{!this}" action="{!c.doInit}" /> -->
+        <div class="slds-col slds-col--padded slds-p-top--large"> 
+              <div class="slds-form slds-form_stacked" role="list">
+                   <div class="slds-grid slds-gutters_small">
+                    <div class="slds-col slds-has-flexi-truncate slds-grid" role="listitem">
+                        <div class="slds-form-element slds-is-editing">
+                            <div class="slds-form-element__control">
+                               
+                                <ui:inputText label="Product Name" aura:id="Name" value="{!v.productinformation.Name__c}" required="true" />
+								
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>    
+                   <div class="slds-align_absolute-center">
+                    <lightning:button class="slds-button slds-button_brand"  disabled="{!v.disabled}"  label="Save" onclick="{!c.CreateNewProduct }"/>
+                  </div></div></div>
+</aura:component>

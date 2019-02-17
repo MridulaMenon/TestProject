@@ -1,0 +1,17 @@
+<apex:page controller="paginationController">
+    <apex:form >
+        <apex:commandButton value="Search" action="{!searchResult}"/>
+           <apex:dataTable value="{!listAccts}" var="acc">
+            <apex:column headervalue="Name">
+            <apex:outputField value="{!acc.Name}"/>
+               </apex:column>
+            <apex:column headerValue="Id">  
+             <apex:outputField value="{!acc.Id}"/>  
+                </apex:column>    
+        </apex:dataTable>
+        <apex:commandButton value="First" action="{!firstBtn}"/>
+        <apex:commandButton value="Next" action="{!nextBtn}"/>
+        <apex:commandButton value="Previous" action="{!prevBtn}"/>
+        <apex:commandButton value="Last" action="{!LastBtn}"/>
+    </apex:form>
+</apex:page>

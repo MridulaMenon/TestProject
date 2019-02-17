@@ -1,0 +1,9 @@
+<apex:page controller="AccountHandler">
+  <!-- Begin Default Content REMOVE THIS -->
+  <apex:form >
+      <apex:pageblockSection >
+          <!--<apex:inputText value=""/> -->
+      </apex:pageblockSection>
+  </apex:form>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>
